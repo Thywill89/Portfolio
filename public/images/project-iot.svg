@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <rect width="960" height="600" fill="#0b1220"/>
+  <rect x="40" y="36" width="880" height="528" rx="16" fill="#121a2a"/>
+  <rect x="40" y="36" width="220" height="528" fill="#0e1624"/>
+  <rect x="70" y="70" width="160" height="14" rx="7" fill="#2dd4bf"/>
+  <rect x="70" y="120" width="140" height="10" rx="5" fill="#2a3b52"/>
+  <rect x="70" y="148" width="140" height="10" rx="5" fill="#2a3b52"/>
+  <rect x="70" y="176" width="140" height="10" rx="5" fill="#2a3b52"/>
+  <rect x="290" y="70" width="280" height="140" rx="12" fill="#172338"/>
+  <rect x="590" y="70" width="280" height="140" rx="12" fill="#172338"/>
+  <text x="310" y="110" font-family="ui-sans-serif, system-ui" font-size="14" fill="#94a0ac">Temperature</text>
+  <text x="310" y="150" font-family="Georgia, serif" font-size="36" fill="#2dd4bf">27.4°</text>
+  <text x="610" y="110" font-family="ui-sans-serif, system-ui" font-size="14" fill="#94a0ac">Humidity</text>
+  <text x="610" y="150" font-family="Georgia, serif" font-size="36" fill="#7dd3fc">61%</text>
+  <polyline points="300,400 360,360 420,380 480,300 540,320 600,250 660,270 720,220 780,240 840,200" stroke="#2dd4bf" stroke-width="3" fill="none"/>
+  <text x="290" y="480" font-family="ui-sans-serif, system-ui" font-size="18" fill="#eceff2">IoT Lab Monitor</text>
+</svg>

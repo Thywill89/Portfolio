@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>Thywill Naamwanuru Saanuo — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Thywill Naamwanuru Saanuo is a full-stack developer in Kasoa, Ghana. React, Node.js, PHP, and Next.js. BSc. IoT & Big Data student at GCTU. Available for freelance work."
+    />
+    <link rel="canonical" href="https://your-domain.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Thywill Naamwanuru Saanuo — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack developer in Kasoa, Ghana. Building reliable web products with React, Node.js, PHP, and Next.js."
+    />
+    <meta property="og:url" content="https://your-domain.vercel.app/" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thywill Naamwanuru Saanuo — Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer in Kasoa, Ghana. React · Node.js · PHP · Next.js."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--
+      ANALYTICS: Drop Google Analytics or Plausible here.
+      Prefer env-driven snippets in src/components/Analytics.tsx
+      (VITE_GA_MEASUREMENT_ID / VITE_PLAUSIBLE_DOMAIN) so keys stay out of git.
+
+      Plausible (paste if you are not using the React component):
+      <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+
+      Google Analytics 4:
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXX');
+      </script>
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var dark = stored ? stored === 'dark' : prefersDark;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

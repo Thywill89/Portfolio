@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: 247 246 242;
+    --ink: 18 22 28;
+    --muted: 90 98 108;
+    --surface: 255 255 255;
+    --line: 226 222 214;
+    --accent: 13 148 136;
+    --accent-fg: 255 255 255;
+    color-scheme: light;
+  }
+
+  .dark {
+    --canvas: 8 12 16;
+    --ink: 236 239 242;
+    --muted: 148 160 172;
+    --surface: 16 22 28;
+    --line: 36 46 56;
+    --accent: 45 212 191;
+    --accent-fg: 8 12 16;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.28);
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgb(var(--line) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.55) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 75%);
+  }
+
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  .animate-orbit {
+    animation: orbit 26s linear infinite;
+  }
+
+  .animate-orbit-rev {
+    animation: orbit 26s linear infinite reverse;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-orbit,
+  .animate-orbit-rev {
+    animation: none;
+  }
+}

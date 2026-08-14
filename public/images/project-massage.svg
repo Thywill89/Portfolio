@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <rect width="960" height="600" fill="#1a1410"/>
+  <rect x="48" y="40" width="864" height="520" rx="18" fill="#2a221c"/>
+  <rect x="48" y="40" width="864" height="48" rx="18" fill="#3a2e26"/>
+  <circle cx="80" cy="64" r="6" fill="#e07a5f"/>
+  <circle cx="100" cy="64" r="6" fill="#f2cc8f"/>
+  <circle cx="120" cy="64" r="6" fill="#81b29a"/>
+  <text x="80" y="140" font-family="Georgia, serif" font-size="36" fill="#f2cc8f">77 Massage Treat</text>
+  <text x="80" y="180" font-family="ui-sans-serif, system-ui" font-size="16" fill="#c9b8a8">Wellness studio · live client site</text>
+  <rect x="80" y="220" width="240" height="260" rx="14" fill="#3d322a"/>
+  <rect x="340" y="220" width="240" height="260" rx="14" fill="#3d322a"/>
+  <rect x="600" y="220" width="240" height="260" rx="14" fill="#3d322a"/>
+  <rect x="100" y="250" width="200" height="120" rx="10" fill="#4a3b32"/>
+  <rect x="360" y="250" width="200" height="120" rx="10" fill="#4a3b32"/>
+  <rect x="620" y="250" width="200" height="120" rx="10" fill="#4a3b32"/>
+  <rect x="100" y="390" width="140" height="12" rx="6" fill="#f2cc8f" opacity="0.7"/>
+  <rect x="360" y="390" width="140" height="12" rx="6" fill="#f2cc8f" opacity="0.7"/>
+  <rect x="620" y="390" width="140" height="12" rx="6" fill="#f2cc8f" opacity="0.7"/>
+</svg>
