@@ -1,6 +1,6 @@
 # Thywill Naamwanuru Saanuo — Portfolio
 
-Personal site for a full-stack developer based in Kasoa, Ghana. Built with React 18, Vite, TypeScript, Tailwind CSS, React Router, Framer Motion, React Hook Form, and Zod.
+Personal site for a full-stack developer based in Kasoa, Ghana. Built with React 18, Vite, TypeScript, Tailwind CSS, React Router, and Framer Motion. Contact goes to WhatsApp.
 
 ## Setup
 
@@ -18,14 +18,11 @@ Copy `.env.example` to `.env` and fill in:
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_FORMSPREE_ID` | Formspree form ID so the contact form can send mail |
 | `VITE_SITE_URL` | Canonical site URL (no trailing slash) |
 | `VITE_GA_MEASUREMENT_ID` | Optional Google Analytics 4 ID |
 | `VITE_PLAUSIBLE_DOMAIN` | Optional Plausible `data-domain` |
 
-Create a form at [Formspree](https://formspree.io). The ID is the `xxxxxxxx` in `https://formspree.io/f/xxxxxxxx`.
-
-Update GitHub, LinkedIn, and email in `src/lib/site.ts`.
+Update GitHub, LinkedIn, email, and WhatsApp number in `src/lib/site.ts`.
 
 ## Scripts
 

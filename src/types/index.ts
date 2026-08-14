@@ -4,7 +4,7 @@ export type NavItem = {
 };
 
 export type SocialLink = {
-  label: 'GitHub' | 'LinkedIn' | 'Email';
+  label: 'GitHub' | 'LinkedIn' | 'WhatsApp' | 'Email';
   href: string;
 };
 

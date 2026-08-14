@@ -7,7 +7,14 @@ export const SITE = {
   location: 'Kasoa, Ghana',
   tagline:
     'I design and ship reliable web products — PHP and Node on the server, React and Next.js in the browser.',
-  email: 'thywill.saanuo@gmail.com',
+  email: 'thywillnaamwanuru89@gmail.com',
+  phoneDisplay: '055 001 6447',
+  phoneE164: '233550016447',
+  whatsappUrl:
+    'https://wa.me/233550016447?text=' +
+    encodeURIComponent(
+      'Hi Thywill — I found your portfolio and would like to talk about a project.',
+    ),
   url: import.meta.env.VITE_SITE_URL || 'https://your-domain.vercel.app',
 } as const;
 
@@ -22,6 +29,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const SOCIAL: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/Thywill89' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thywill-naamwanuru-097656257' },
+  { label: 'WhatsApp', href: SITE.whatsappUrl },
   { label: 'Email', href: `mailto:${SITE.email}` },
 ];
 

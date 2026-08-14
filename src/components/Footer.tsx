@@ -1,10 +1,11 @@
 import { SITE, SOCIAL } from '@/lib/site';
-import { GitHubIcon, LinkedInIcon } from '@/components/icons';
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/icons';
 import { ArrowUp, Mail } from 'lucide-react';
 
 const ICONS = {
   GitHub: GitHubIcon,
   LinkedIn: LinkedInIcon,
+  WhatsApp: WhatsAppIcon,
   Email: Mail,
 } as const;
 
