@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/ui/Section';
 import { SITE, SOCIAL } from '@/lib/site';
-import { Mail } from 'lucide-react';
+import { Download, Mail } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/icons';
 
 export function Contact() {
@@ -45,6 +45,19 @@ export function Contact() {
               </li>
             ))}
           </ul>
+          <div className="mt-6 pt-6 border-t border-line">
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-fg hover:border-accent"
+            >
+              <Download size={16} aria-hidden="true" />
+              Download CV
+            </a>
+            <p className="mt-2 text-xs text-muted">
+              TODO: Add cv.pdf to public/ directory
+            </p>
+          </div>
         </div>
 
         <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8">

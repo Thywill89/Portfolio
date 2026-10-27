@@ -12,11 +12,11 @@ export default {
         line: 'rgb(var(--line) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
         'accent-fg': 'rgb(var(--accent-fg) / <alpha-value>)',
+        secondary: 'rgb(var(--secondary) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['"Syne"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Syne', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         content: '72rem',
