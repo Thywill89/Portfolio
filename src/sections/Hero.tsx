@@ -1,90 +1,175 @@
 import { Button } from '@/components/ui/Button';
-import { OrbitPortrait } from '@/components/OrbitPortrait';
 import { SITE } from '@/lib/site';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowDownRight } from 'lucide-react';
+import { ArrowRight, Code2, Terminal } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-const TAPE = [
+const STACK = [
   'React',
   'Next.js',
   'Node.js',
   'PHP',
   'Express',
+  'TypeScript',
   'Prisma',
   'Supabase',
   'Tailwind',
-  'IoT',
-  'Big Data',
+  'MySQL',
+];
+
+const PROMPT_LINES = [
+  '$ whoami',
+  'thywill@kasoa ~ Full-Stack Developer',
+  '',
+  '$ cat skills.txt',
+  'Frontend: React, Next.js, TypeScript, Tailwind CSS',
+  'Backend: Node.js, PHP, Express, REST APIs',
+  'Database: MySQL, PostgreSQL, Prisma, Supabase',
+  '',
+  '$ ls projects/',
+  '77massagetreat.com  campus-connect  iot-lab-monitor',
+  'sevan-fitness  school-mgmt  event-ticketing  ...',
+  '',
+  '$ echo $STATUS',
+  'Available for freelance & remote work',
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const reduce = Boolean(useReducedMotion());
-  const tape = [...TAPE, ...TAPE];
+  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+
+  useEffect(() => {
+    if (reduce || currentLineIndex >= PROMPT_LINES.length) {
+      setDisplayedLines(PROMPT_LINES);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setDisplayedLines((prev) => [...prev, PROMPT_LINES[currentLineIndex]!]);
+      setCurrentLineIndex((prev) => prev + 1);
+    }, 120);
+
+    return () => clearTimeout(timer);
+  }, [currentLineIndex, reduce]);
+
+  const stack = [...STACK, ...STACK];
 
   return (
     <section id="hero" className="relative isolate overflow-hidden border-b border-line">
       <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden="true" />
-      <p
-        className="pointer-events-none absolute -left-2 top-[18%] font-display text-[22vw] font-extrabold leading-none text-ink/[0.045] dark:text-ink/[0.06]"
-        aria-hidden="true"
-      >
-        TNS
-      </p>
+      
+      <div className="relative mx-auto min-h-[calc(100vh-8.5rem)] max-w-content px-4 py-16 sm:px-6 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr,1fr] lg:gap-16">
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+            className="flex flex-col justify-center"
+          >
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              Open for freelance
+            </div>
 
-      <div className="relative mx-auto grid min-h-[calc(100vh-8.5rem)] max-w-content items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:py-10">
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease }}
-        >
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            Open for freelance
-          </p>
+            <div className="mb-4 flex items-center gap-2 font-mono text-xs text-accent">
+              <Terminal size={14} />
+              <span>{SITE.location}</span>
+            </div>
 
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent">
-            {SITE.location}
-          </p>
-          <p className="mt-3 text-lg text-muted sm:text-xl">Hi there, I&apos;m</p>
-          <h1 className="mt-1 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            {SITE.name}
-          </h1>
-          <p className="mt-4 font-display text-2xl font-semibold leading-tight sm:text-3xl">
-            I build <span className="text-accent">the web</span> that lasts.
-          </p>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            Full-stack developer in Kasoa. Websites, APIs, and dashboards — designed, built, and
-            delivered to production.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/#projects">
-              See live work
-              <ArrowDownRight size={16} aria-hidden="true" />
-            </Button>
-            <Button href="/#contact" variant="secondary">
-              Start a project
-            </Button>
-          </div>
-        </motion.div>
+            <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              {SITE.shortName}
+              <br />
+              <span className="text-accent">Naamwanuru</span>
+            </h1>
 
-        <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.12, ease }}
-        >
-          <OrbitPortrait />
-        </motion.div>
+            <p className="mt-6 font-display text-2xl font-semibold leading-tight text-muted sm:text-3xl">
+              Full-Stack Developer
+            </p>
+
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+              Building reliable web products with React, Node.js, and PHP. From concept to
+              deployment — I ship clean code and working software.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href="/#projects">
+                <Code2 size={16} aria-hidden="true" />
+                View Projects
+              </Button>
+              <Button href="/#contact" variant="secondary">
+                Get in Touch
+                <ArrowRight size={16} aria-hidden="true" />
+              </Button>
+            </div>
+
+            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-line pt-8 text-sm">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-muted">Location</p>
+                <p className="mt-1 font-medium">Kasoa, GH</p>
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-muted">Experience</p>
+                <p className="mt-1 font-medium">~2 Years</p>
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-muted">Work Type</p>
+                <p className="mt-1 font-medium">Remote</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={reduce ? false : { opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease }}
+            className="flex items-center"
+          >
+            <div className="w-full rounded-xl border border-line bg-surface/80 p-6 shadow-xl backdrop-blur-sm">
+              <div className="mb-4 flex items-center justify-between border-b border-line pb-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />
+                    <div className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
+                    <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
+                  </div>
+                  <span className="ml-2 font-mono text-xs text-muted">bash</span>
+                </div>
+                <Terminal size={14} className="text-muted" />
+              </div>
+              <div className="space-y-1 font-mono text-[13px] leading-relaxed">
+                {displayedLines.map((line, i) => (
+                  <div
+                    key={i}
+                    className={
+                      line.startsWith('$')
+                        ? 'text-accent'
+                        : line === ''
+                          ? 'h-3'
+                          : 'text-muted'
+                    }
+                  >
+                    {line || '\u00A0'}
+                  </div>
+                ))}
+                {!reduce && currentLineIndex < PROMPT_LINES.length && (
+                  <span className="inline-block h-4 w-2 animate-pulse bg-accent" />
+                )}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <div className="relative border-t border-line bg-surface/40 py-3">
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex min-w-full shrink-0 gap-10 pr-10">
-            {tape.map((item, i) => (
+            {stack.map((item, i) => (
               <span
                 key={`${item}-${String(i)}`}
                 className="font-mono text-xs uppercase tracking-[0.28em] text-muted"
