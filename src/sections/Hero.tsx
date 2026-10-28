@@ -59,16 +59,15 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative isolate overflow-hidden border-b border-line">
-      {/* Background image with overlay */}
+      {/* Background image - clearly visible */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 dark:opacity-10"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 dark:opacity-30"
           style={{ backgroundImage: 'url(/images/portrait.png)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0b0f14]/95 via-[#0b0f14]/90 to-[#0b0f14]/80 dark:from-[#0b0f14]/98 dark:via-[#0b0f14]/95 dark:to-[#0b0f14]/90" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAF7] via-[#FAFAF7]/95 to-[#FAFAF7]/85 dark:from-[#0b0f14] dark:via-[#0b0f14]/95 dark:to-[#0b0f14]/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAFAF7]/60 dark:to-[#0b0f14]/60" />
       </div>
-      <div className="grid-bg pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
+      <div className="grid-bg pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
       
       <div className="relative mx-auto min-h-[calc(100vh-8.5rem)] max-w-content px-4 py-16 sm:px-6 lg:py-20">
         <div className="grid gap-8 lg:grid-cols-[1.2fr,1fr] lg:gap-12">
@@ -78,7 +77,10 @@ export function Hero() {
             transition={{ duration: 0.6, ease }}
             className="flex flex-col justify-center"
           >
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted backdrop-blur-sm">
+            {/* Frosted glass panel behind text content */}
+            <div className="absolute inset-x-4 top-16 bottom-16 rounded-2xl bg-surface/70 backdrop-blur-md dark:bg-surface/60 sm:inset-x-6 lg:inset-x-auto lg:left-0 lg:right-[52%] lg:top-20 lg:bottom-20" aria-hidden="true" />
+            
+            <div className="relative mb-6 inline-flex w-fit items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
