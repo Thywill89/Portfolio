@@ -1,10 +1,9 @@
 import { Button } from '@/components/ui/Button';
-import { Section } from '@/components/ui/Section';
 import { useSeo } from '@/hooks/useSeo';
 import { BLOG_POSTS } from '@/lib/site';
 import { formatDate } from '@/lib/utils';
-import { ArrowLeft } from 'lucide-react';
-import { useParams } from 'react-router-dom';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Link, useParams } from 'react-router-dom';
 
 const BODIES: Record<string, string[]> = {
   'shipping-client-sites-from-kasoa': [
@@ -26,27 +25,72 @@ export function BlogPostPage() {
 
   if (!post) {
     return (
-      <Section id="missing-post" title="Note not found">
-        <Button to="/blog" variant="secondary">
-          <ArrowLeft size={16} aria-hidden="true" />
-          Back to notes
-        </Button>
-      </Section>
+      <div className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <h1 className="font-display text-3xl font-bold">Post Not Found</h1>
+          <p className="mt-4 text-muted">That blog post does not exist.</p>
+          <Button to="/blog" variant="secondary" className="mt-6">
+            <ArrowLeft size={16} aria-hidden="true" />
+            Back to Blog
+          </Button>
+        </div>
+      </div>
     );
   }
 
   return (
-    <Section id="blog-post" eyebrow={formatDate(post.date)} title={post.title}>
-      <p className="mb-8 text-sm text-muted">{post.readTime}</p>
-      <div className="max-w-2xl space-y-4 text-base leading-relaxed text-muted">
-        {(paragraphs ?? [post.excerpt]).map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-      </div>
-      <Button to="/blog" variant="ghost" className="mt-10">
-        <ArrowLeft size={16} aria-hidden="true" />
-        All notes
-      </Button>
-    </Section>
+    <div className="py-16 sm:py-20">
+      <article className="mx-auto max-w-3xl px-4 sm:px-6">
+        <Link
+          to="/blog"
+          className="group mb-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+        >
+          <ArrowLeft size={16} aria-hidden="true" />
+          <span>Back to Blog</span>
+        </Link>
+
+        <header className="mb-10 border-b border-line pb-8">
+          <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted">
+            <span className="inline-flex items-center gap-2">
+              <Calendar size={16} />
+              {formatDate(post.date)}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Clock size={16} />
+              {post.readTime}
+            </span>
+          </div>
+          <h1 className="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            {post.title}
+          </h1>
+          <p className="mt-4 text-lg text-muted">{post.excerpt}</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md border border-line bg-surface px-3 py-1 font-mono text-xs text-muted"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        <div className="prose prose-lg max-w-none">
+          {(paragraphs ?? [post.excerpt]).map((p, i) => (
+            <p key={i} className="mb-6 text-base leading-relaxed text-muted">
+              {p}
+            </p>
+          ))}
+        </div>
+
+        <footer className="mt-12 border-t border-line pt-8">
+          <Button to="/blog" variant="ghost">
+            <ArrowLeft size={16} aria-hidden="true" />
+            All Posts
+          </Button>
+        </footer>
+      </article>
+    </div>
   );
 }
