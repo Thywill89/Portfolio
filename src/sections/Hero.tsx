@@ -59,7 +59,16 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative isolate overflow-hidden border-b border-line">
-      <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden="true" />
+      {/* Background image with overlay */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 dark:opacity-10"
+          style={{ backgroundImage: 'url(/images/portrait.png)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0b0f14]/95 via-[#0b0f14]/90 to-[#0b0f14]/80 dark:from-[#0b0f14]/98 dark:via-[#0b0f14]/95 dark:to-[#0b0f14]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAF7] via-[#FAFAF7]/95 to-[#FAFAF7]/85 dark:from-[#0b0f14] dark:via-[#0b0f14]/95 dark:to-[#0b0f14]/85" />
+      </div>
+      <div className="grid-bg pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
       
       <div className="relative mx-auto min-h-[calc(100vh-8.5rem)] max-w-content px-4 py-16 sm:px-6 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.2fr,1fr] lg:gap-16">
@@ -82,17 +91,17 @@ export function Hero() {
               <span>{SITE.location}</span>
             </div>
 
-            <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl [text-shadow:_0_2px_8px_rgb(0_0_0_/_40%),_0_4px_16px_rgb(0_0_0_/_30%)] dark:[text-shadow:_0_2px_12px_rgb(0_0_0_/_60%),_0_4px_20px_rgb(0_0_0_/_40%)]">
               {SITE.shortName}
               <br />
               <span className="text-accent">Naamwanuru</span>
             </h1>
 
-            <p className="mt-6 font-display text-2xl font-semibold leading-tight text-muted sm:text-3xl">
+            <p className="mt-6 font-display text-2xl font-semibold leading-tight text-muted sm:text-3xl [text-shadow:_0_1px_4px_rgb(0_0_0_/_30%)] dark:[text-shadow:_0_1px_6px_rgb(0_0_0_/_50%)]">
               Full-Stack Developer
             </p>
 
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg [text-shadow:_0_1px_3px_rgb(0_0_0_/_25%)] dark:[text-shadow:_0_1px_4px_rgb(0_0_0_/_40%)]">
               Building reliable web products with React, Node.js, and PHP. From concept to
               deployment — I ship clean code and working software.
             </p>

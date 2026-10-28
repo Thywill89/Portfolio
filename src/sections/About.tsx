@@ -5,7 +5,7 @@ import { Code2, GraduationCap, MapPin, Briefcase } from 'lucide-react';
 export function About() {
   return (
     <Section id="about" containerClassName="max-w-6xl px-4 sm:px-6">
-      <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+      <div className="max-w-4xl">
         <div className="min-w-0">
           <p className="mb-3 font-mono text-xs uppercase tracking-wider text-accent">
             01 — About
@@ -47,19 +47,6 @@ export function About() {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        <div className="w-full lg:sticky lg:top-24 lg:max-w-[20rem]">
-          <div className="overflow-hidden rounded-2xl border border-line bg-surface shadow-xl">
-            <img
-              src="/images/portrait.png"
-              alt={ABOUT.photoAlt}
-              width={720}
-              height={960}
-              loading="lazy"
-              className="h-auto w-full"
-            />
           </div>
         </div>
       </div>
