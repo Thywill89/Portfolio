@@ -15,7 +15,7 @@ export const SITE = {
     encodeURIComponent(
       'Hi Thywill — I found your portfolio and would like to talk about a project.',
     ),
-  url: import.meta.env.VITE_SITE_URL || 'https://your-domain.vercel.app',
+  url: import.meta.env.VITE_SITE_URL || 'https://thywill.vercel.app',
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
@@ -71,10 +71,84 @@ export const PROJECTS: Project[] = [
     description:
       'A React dashboard backed by a Node/Express API that ingests sensor readings and surfaces them as live cards and simple trend charts. Prisma models the device and reading tables; the UI is built to stay readable on a lab tablet. This project sits at the overlap of my degree and freelance work: data in, a usable interface out.',
     tags: ['React', 'Node.js', 'Express', 'Prisma'],
-    githubUrl: 'https://github.com/Thywill89',
+    githubUrl: 'https://github.com/Thywill89/Portfolio',
     image: '/images/project-iot.svg',
     year: '2025',
     role: 'Academic / personal',
+  },
+  {
+    slug: 'sevan-fitness-gym',
+    title: 'Sevan Fitness Gym',
+    summary:
+      'Gym management system for member registration, renewals, and revenue tracking.',
+    description:
+      'A complete gym management solution handling member registration, membership renewals, attendance tracking, and revenue reporting. Built to streamline day-to-day operations for fitness centers.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
+    image: '/images/project-campus.svg',
+    year: '2024',
+    role: 'Client project',
+  },
+  {
+    slug: 'saraboff',
+    title: 'SaraBoff Hotel Management',
+    summary:
+      'Hotel management system for room bookings, guest records, and operations.',
+    description:
+      'A hotel management platform covering room reservations, guest information management, check-in/check-out processes, and operational reporting for hospitality businesses.',
+    tags: ['PHP', 'MySQL', 'JavaScript'],
+    image: '/images/project-iot.svg',
+    year: '2024',
+    role: 'Client project',
+  },
+  {
+    slug: 'event-ticketing',
+    title: 'Event Ticketing System',
+    summary:
+      'Online ticketing platform for event registration and ticket sales.',
+    description:
+      'A web-based ticketing system for event organizers to manage ticket sales, registrations, and attendee information. Supports multiple ticket types and payment processing.',
+    tags: ['PHP', 'MySQL', 'JavaScript'],
+    githubUrl: 'https://github.com/Thywill89/Event_Ticketing',
+    image: '/images/project-campus.svg',
+    year: '2024',
+    role: 'Personal project',
+  },
+  {
+    slug: 'school-management-sys',
+    title: 'School Management System',
+    summary:
+      'Comprehensive school administration system for student records and academic management.',
+    description:
+      'A full-featured school management platform handling student enrollment, academic records, grade management, attendance tracking, and administrative reporting for educational institutions.',
+    tags: ['PHP', 'MySQL', 'JavaScript'],
+    image: '/images/project-iot.svg',
+    year: '2024',
+    role: 'Client project',
+  },
+  {
+    slug: 'neighborhood-textiles',
+    title: 'Neighborhood Textiles',
+    summary:
+      'Business website for a textile company showcasing products and services.',
+    description:
+      'A professional web presence for Neighborhood Textiles, featuring product catalogs, service information, and customer contact forms. Built to enhance online visibility and customer engagement.',
+    tags: ['PHP', 'CSS', 'JavaScript'],
+    image: '/images/project-campus.svg',
+    year: '2024',
+    role: 'Client project',
+  },
+  {
+    slug: 'shop-albie',
+    title: 'Shop Albie',
+    summary:
+      'E-commerce platform for online retail with product management and checkout.',
+    description:
+      'An online shopping platform with product catalog, shopping cart functionality, secure checkout process, and order management. Built for small to medium retail businesses.',
+    tags: ['PHP', 'MySQL', 'JavaScript'],
+    githubUrl: 'https://github.com/sysswift/Shop-Albie',
+    image: '/images/project-iot.svg',
+    year: '2024',
+    role: 'Personal project',
   },
   {
     slug: 'campus-connect',
@@ -84,7 +158,7 @@ export const PROJECTS: Project[] = [
     description:
       'Campus Connect is a small student portal: announcements, resource links, and authenticated views. Next.js handles routing and rendering; Supabase covers auth and data. I used it to practice the same patterns I apply on freelance jobs — typed forms, empty states, and a layout that does not fall apart at 320px.',
     tags: ['Next.js', 'React', 'Supabase', 'Tailwind'],
-    githubUrl: 'https://github.com/Thywill89',
+    githubUrl: 'https://github.com/Thywill89/Portfolio',
     image: '/images/project-campus.svg',
     year: '2026',
     role: 'Personal product',
