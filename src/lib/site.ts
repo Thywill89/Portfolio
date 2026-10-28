@@ -114,6 +114,18 @@ export const PROJECTS: Project[] = [
     role: 'Personal project',
   },
   {
+    slug: 'merillafits',
+    title: 'MerillaFits',
+    summary:
+      'Fitness and wellness platform for workout tracking and health management.',
+    description:
+      'A fitness management application for tracking workouts, nutrition plans, and wellness goals. Built to help users maintain their fitness journey with progress tracking and personalized recommendations.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
+    image: '/images/project-campus.svg',
+    year: '2024',
+    role: 'Personal project',
+  },
+  {
     slug: 'school-management-sys',
     title: 'School Management System',
     summary:
@@ -124,6 +136,18 @@ export const PROJECTS: Project[] = [
     image: '/images/project-iot.svg',
     year: '2024',
     role: 'Client project',
+  },
+  {
+    slug: 'sysswift',
+    title: 'SySSwift',
+    summary:
+      'Business management and workflow automation system.',
+    description:
+      'A comprehensive business management solution providing workflow automation, task management, and operational tools. Designed to streamline business processes and improve team productivity.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
+    image: '/images/project-iot.svg',
+    year: '2024',
+    role: 'Personal project',
   },
   {
     slug: 'neighborhood-textiles',
