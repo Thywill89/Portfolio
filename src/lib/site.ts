@@ -19,10 +19,11 @@ export const SITE = {
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'About', href: '/#about' },
+  { label: 'Featured', href: '/#featured' },
+  { label: 'Live Projects', href: '/#live-projects' },
+  { label: 'Works', href: '/#my-works' },
   { label: 'Skills', href: '/#skills' },
-  { label: 'Work', href: '/#projects' },
-  { label: 'Experience', href: '/#experience' },
+  { label: 'Education', href: '/#education' },
   { label: 'Contact', href: '/#contact' },
 ];
 

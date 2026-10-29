@@ -1,6 +1,7 @@
 import { Section } from '@/components/ui/Section';
 import { SKILL_GROUPS } from '@/lib/site';
 import { Code2, Database, Globe } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const CATEGORY_ICONS = {
   Frontend: Globe,
@@ -8,7 +9,11 @@ const CATEGORY_ICONS = {
   'Database / Tools': Database,
 } as const;
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export function Skills() {
+  const reduce = Boolean(useReducedMotion());
+
   return (
     <Section
       id="skills"
@@ -17,56 +22,73 @@ export function Skills() {
       description="Modern web development from UI to database. Technologies I use daily on client projects and personal builds."
     >
       <div className="grid gap-6 md:grid-cols-3">
-        {SKILL_GROUPS.map((group) => {
+        {SKILL_GROUPS.map((group, groupIndex) => {
           const Icon = CATEGORY_ICONS[group.category as keyof typeof CATEGORY_ICONS];
           return (
-            <div
+            <motion.div
               key={group.category}
-              className="group rounded-xl border border-line bg-surface p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-glow"
+              initial={reduce ? false : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: groupIndex * 0.15, ease }}
+              className="group relative overflow-hidden rounded-xl border border-line bg-surface p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-glow"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-fg">
-                  {Icon && <Icon size={20} />}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="relative">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-accent-fg group-hover:scale-110">
+                    {Icon && <Icon size={22} />}
+                  </div>
+                  <h3 className="font-display text-lg font-bold lg:text-xl">{group.category}</h3>
                 </div>
-                <h3 className="font-display text-lg font-bold">{group.category}</h3>
+                <ul className="space-y-2.5">
+                  {group.items.map((item, itemIndex) => (
+                    <motion.li
+                      key={item}
+                      initial={reduce ? false : { opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: '-50px' }}
+                      transition={{ duration: 0.3, delay: groupIndex * 0.15 + itemIndex * 0.05, ease }}
+                      className="flex items-center gap-2.5 text-sm text-muted/90 transition-colors hover:text-ink"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span className="font-mono font-medium">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-accent" />
-                    <span className="font-mono">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </motion.div>
           );
         })}
       </div>
       
-      <div className="mt-12 rounded-xl border border-line bg-surface/50 p-6">
-        <p className="font-mono text-xs uppercase tracking-wider text-muted">Working Style</p>
-        <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div
+        initial={reduce ? false : { opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.5, delay: 0.5, ease }}
+        className="mt-12 rounded-xl border border-line bg-surface/50 p-6 lg:p-7"
+      >
+        <p className="font-mono text-xs uppercase tracking-wider text-accent">Working Style</p>
+        <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h4 className="font-display text-sm font-semibold">Version Control</h4>
-            <p className="mt-1 text-sm text-muted">Git workflows, GitHub, clean commits</p>
+            <h4 className="font-display text-sm font-semibold lg:text-base">Version Control</h4>
+            <p className="mt-2 text-sm text-muted/90">Git workflows, GitHub, clean commits</p>
           </div>
           <div>
-            <h4 className="font-display text-sm font-semibold">Deployment</h4>
-            <p className="mt-1 text-sm text-muted">Vercel, Hostinger, cPanel, CI/CD</p>
+            <h4 className="font-display text-sm font-semibold lg:text-base">Deployment</h4>
+            <p className="mt-2 text-sm text-muted/90">Vercel, Hostinger, cPanel, CI/CD</p>
           </div>
           <div>
-            <h4 className="font-display text-sm font-semibold">Responsive Design</h4>
-            <p className="mt-1 text-sm text-muted">Mobile-first, accessible, tested</p>
+            <h4 className="font-display text-sm font-semibold lg:text-base">Responsive Design</h4>
+            <p className="mt-2 text-sm text-muted/90">Mobile-first, accessible, tested</p>
           </div>
           <div>
-            <h4 className="font-display text-sm font-semibold">Documentation</h4>
-            <p className="mt-1 text-sm text-muted">Clear handoffs, maintainable code</p>
+            <h4 className="font-display text-sm font-semibold lg:text-base">Documentation</h4>
+            <p className="mt-2 text-sm text-muted/90">Clear handoffs, maintainable code</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

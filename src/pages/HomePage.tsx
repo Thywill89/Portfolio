@@ -1,9 +1,11 @@
-import { About } from '@/sections/About';
-import { Contact } from '@/sections/Contact';
-import { Experience } from '@/sections/Experience';
 import { Hero } from '@/sections/Hero';
-import { Projects } from '@/sections/Projects';
+import { FeaturedShowcase } from '@/sections/FeaturedShowcase';
+import { LiveProjects } from '@/sections/LiveProjects';
+import { MyWorks } from '@/sections/MyWorks';
 import { Skills } from '@/sections/Skills';
+import { Education } from '@/sections/Education';
+import { Experience } from '@/sections/Experience';
+import { Contact } from '@/sections/Contact';
 import { useSeo } from '@/hooks/useSeo';
 import { SITE } from '@/lib/site';
 
@@ -15,9 +17,11 @@ export function HomePage() {
   return (
     <>
       <Hero />
-      <About />
+      <FeaturedShowcase />
+      <LiveProjects />
+      <MyWorks limit={6} />
       <Skills />
-      <Projects limit={3} />
+      <Education />
       <Experience />
       <Contact />
     </>

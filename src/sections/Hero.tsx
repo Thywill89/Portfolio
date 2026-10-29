@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/Button';
 import { SITE } from '@/lib/site';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Code2, Terminal } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -15,6 +15,15 @@ const STACK = [
   'Supabase',
   'Tailwind',
   'MySQL',
+];
+
+const ROLES = [
+  'Full-Stack Developer',
+  'Frontend Engineer',
+  'Backend Developer',
+  'Web Developer',
+  'Software Engineer',
+  'React Developer',
 ];
 
 const PROMPT_LINES = [
@@ -40,6 +49,7 @@ export function Hero() {
   const reduce = Boolean(useReducedMotion());
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
     if (reduce || currentLineIndex >= PROMPT_LINES.length) {
@@ -54,6 +64,16 @@ export function Hero() {
 
     return () => clearTimeout(timer);
   }, [currentLineIndex, reduce]);
+
+  useEffect(() => {
+    if (reduce) return;
+    
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % ROLES.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [reduce]);
 
   const stack = [...STACK, ...STACK];
 
@@ -94,14 +114,31 @@ export function Hero() {
             </div>
 
             <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl [text-shadow:_0_2px_8px_rgb(0_0_0_/_40%),_0_4px_16px_rgb(0_0_0_/_30%)] dark:[text-shadow:_0_2px_12px_rgb(0_0_0_/_60%),_0_4px_20px_rgb(0_0_0_/_40%)]">
-              {SITE.shortName}
-              <br />
-              <span className="text-accent">Naamwanuru</span>
+              <span className="block mb-2">Hi, I'm</span>
+              <span className="text-accent">{SITE.shortName} Naamwanuru</span>
             </h1>
 
-            <p className="mt-6 font-display text-xl font-semibold leading-tight text-muted sm:text-2xl [text-shadow:_0_1px_4px_rgb(0_0_0_/_30%)] dark:[text-shadow:_0_1px_6px_rgb(0_0_0_/_50%)]">
-              Full-Stack Developer
-            </p>
+            <div className="mt-5 inline-flex max-w-2xl items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 backdrop-blur-sm">
+              <span className="text-2xl" role="img" aria-label="achievement">🏆</span>
+              <p className="text-sm leading-relaxed text-ink sm:text-base">
+                Building production web apps for clients while completing IoT & Big Data degree at GCTU
+              </p>
+            </div>
+
+            <div className="mt-6 h-[2.5rem] sm:h-[3rem] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentRoleIndex}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -40, opacity: 0 }}
+                  transition={{ duration: 0.5, ease }}
+                  className="font-display text-2xl font-bold leading-tight text-muted sm:text-3xl [text-shadow:_0_1px_4px_rgb(0_0_0_/_30%)] dark:[text-shadow:_0_1px_6px_rgb(0_0_0_/_50%)]"
+                >
+                  {ROLES[currentRoleIndex]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
 
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted sm:text-base [text-shadow:_0_1px_3px_rgb(0_0_0_/_25%)] dark:[text-shadow:_0_1px_4px_rgb(0_0_0_/_40%)]">
               Building reliable web products with React, Node.js, and PHP. From concept to
