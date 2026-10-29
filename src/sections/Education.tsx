@@ -29,12 +29,10 @@ const EDUCATION = [
   {
     degree: 'Senior High School',
     institution: 'Kwanyako Senior High School',
-    period: '20XX — 20XX',
+    period: '2020 — 2022',
     location: 'Ghana',
     highlights: [
-      'Placeholder: Add your actual high school details',
-      'Science/General Arts/Business program',
-      'Academic achievements or activities',
+      'General Arts program',
     ],
     courses: [],
   },

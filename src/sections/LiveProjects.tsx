@@ -13,16 +13,10 @@ const LIVE_PROJECTS = [
     status: 'Live in production',
   },
   {
-    name: 'Campus Connect',
-    url: '#',
-    description: 'Student portal (placeholder link)',
-    status: 'In development',
-  },
-  {
-    name: 'Your project here',
-    url: '#',
-    description: 'Placeholder for future live project',
-    status: 'Coming soon',
+    name: 'Sevan Fitness Gym',
+    url: 'https://sevan-gym.thywillnaamwanuru89.workers.dev/',
+    description: 'Gym management and membership website',
+    status: 'Live',
   },
 ];
 
@@ -75,6 +69,7 @@ export function LiveProjects() {
                   variant="ghost"
                   size="sm"
                   className="mt-5 w-full"
+                  {...(project.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   Visit Site
                   <ExternalLink size={14} />
