@@ -28,7 +28,7 @@ const EDUCATION = [
   },
   {
     degree: 'Senior High School',
-    institution: 'Your High School Name',
+    institution: 'Kwanyako Senior High School',
     period: '20XX — 20XX',
     location: 'Ghana',
     highlights: [
