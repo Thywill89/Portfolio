@@ -168,23 +168,13 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right: Portrait + Terminal */}
+          {/* Right: Terminal Only */}
           <motion.div
             initial={reduce ? false : { opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease }}
-            className="flex flex-col gap-6 lg:gap-8"
+            className="flex items-center"
           >
-            {/* Portrait - sharp, well-composed */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-surface">
-              <img
-                src="/images/portrait.png"
-                alt="Thywill Naamwanuru"
-                className="h-full w-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-canvas/80 via-canvas/20 to-transparent" />
-            </div>
-
             {/* Terminal card - solid background, crisp text */}
             <div className="w-full overflow-hidden rounded-xl border border-line bg-surface p-4 shadow-lg sm:p-6">
               <div className="mb-3 flex items-center justify-between border-b border-line pb-3">
