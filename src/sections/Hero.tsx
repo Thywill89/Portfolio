@@ -118,6 +118,13 @@ export function Hero() {
               <span className="text-accent">{SITE.shortName} Naamwanuru</span>
             </h1>
 
+            <div className="mt-5 inline-flex max-w-2xl items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 backdrop-blur-sm">
+              <span className="text-2xl" role="img" aria-label="achievement">🏆</span>
+              <p className="text-sm leading-relaxed text-ink sm:text-base">
+                Building production web apps for clients while completing IoT & Big Data degree at GCTU
+              </p>
+            </div>
+
             <div className="mt-6 h-[2.5rem] sm:h-[3rem] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.p

@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
 
-const SECTION_IDS = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
+const SECTION_IDS = ['hero', 'featured', 'live-projects', 'my-works', 'skills', 'education', 'experience', 'contact'];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
