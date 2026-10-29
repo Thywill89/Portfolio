@@ -59,10 +59,10 @@ export function Projects({ limit }: { limit?: number }) {
         </p>
       ) : (
         <div className="grid gap-6">
-          {featured ? <ProjectCard project={featured} featured /> : null}
+          {featured ? <ProjectCard project={featured} featured index={0} /> : null}
           <div className="grid gap-6 md:grid-cols-2">
-            {rest.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+            {rest.map((project, i) => (
+              <ProjectCard key={project.slug} project={project} index={i + (featured ? 1 : 0)} />
             ))}
           </div>
         </div>
