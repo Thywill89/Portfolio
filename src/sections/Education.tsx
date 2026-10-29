@@ -29,7 +29,7 @@ const EDUCATION = [
   {
     degree: 'Senior High School',
     institution: 'Kwanyako Senior High School',
-    period: '2020 — 2022',
+    period: '2019 — 2021',
     location: 'Ghana',
     highlights: [
       'General Arts program',
