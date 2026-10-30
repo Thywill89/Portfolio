@@ -3,7 +3,7 @@ import type { BlogPost, NavItem, Project, SkillGroup, SocialLink, TimelineItem }
 export const SITE = {
   name: 'Thywill Naamwanuru Saanuo',
   shortName: 'Thywill',
-  role: 'Full-Stack Developer',
+  role: 'Software Engineer | Full-Stack Developer',
   location: 'Kasoa, Ghana',
   tagline:
     'I design and ship reliable web products — PHP and Node on the server, React and Next.js in the browser.',
@@ -65,6 +65,20 @@ export const PROJECTS: Project[] = [
     role: 'Full-stack (client project)',
   },
   {
+    slug: 'merillafits',
+    title: 'Merilla Fits',
+    summary:
+      'Live client shop for shoes, bags, and everyday style in Ghana — browse the catalog and order on WhatsApp.',
+    description:
+      'A production storefront for Merilla Fits, built as a freelance engagement. The brief was a mobile-first catalog: sneakers, bags, jewelry, and more, with a bag that sends the order to WhatsApp instead of a checkout form. I handled the storefront UI, category browsing, and the backend pieces that keep product data and images live on Vercel with Supabase.',
+    tags: ['React', 'Supabase', 'Tailwind', 'Vercel'],
+    liveUrl: 'https://merilla-fits.vercel.app/',
+    image: '/images/merilla-fits.png',
+    featured: true,
+    year: '2026',
+    role: 'Full-stack (client project)',
+  },
+  {
     slug: 'iot-lab-monitor',
     title: 'IoT Lab Monitor',
     summary:
@@ -81,11 +95,13 @@ export const PROJECTS: Project[] = [
     slug: 'sevan-fitness-gym',
     title: 'Sevan Fitness Gym',
     summary:
-      'Gym management system for member registration, renewals, and revenue tracking.',
+      'Gym operations dashboard for members, renewals, payments, and revenue — built with Next.js.',
     description:
-      'A complete gym management solution handling member registration, membership renewals, attendance tracking, and revenue reporting. Built to streamline day-to-day operations for fitness centers.',
-    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
-    image: '/images/project-campus.svg',
+      'A Next.js gym management app on Cloudflare Workers. Staff sign in, then run members, memberships, payments, and SMS from one dashboard. Prisma talks to PostgreSQL; the UI is React and Tailwind.',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    liveUrl: 'https://sevan-gym.thywillnaamwanuru89.workers.dev/',
+    image: '/images/sevan-fitness-gym.png',
+    featured: true,
     year: '2024',
     role: 'Client project',
   },
@@ -110,18 +126,6 @@ export const PROJECTS: Project[] = [
       'A web-based ticketing system for event organizers to manage ticket sales, registrations, and attendee information. Supports multiple ticket types and payment processing.',
     tags: ['PHP', 'MySQL', 'JavaScript'],
     githubUrl: 'https://github.com/Thywill89/Event_Ticketing',
-    image: '/images/project-campus.svg',
-    year: '2024',
-    role: 'Personal project',
-  },
-  {
-    slug: 'merillafits',
-    title: 'MerillaFits',
-    summary:
-      'Fitness and wellness platform for workout tracking and health management.',
-    description:
-      'A fitness management application for tracking workouts, nutrition plans, and wellness goals. Built to help users maintain their fitness journey with progress tracking and personalized recommendations.',
-    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
     image: '/images/project-campus.svg',
     year: '2024',
     role: 'Personal project',
@@ -194,15 +198,15 @@ export const TIMELINE: TimelineItem[] = [
   {
     id: 'freelance',
     kind: 'work',
-    title: 'Freelance Full-Stack Developer',
+    title: 'Software Engineer | Full-Stack Developer',
     org: 'Independent',
     location: 'Kasoa, Ghana · Remote',
     start: '2024',
     end: 'Present',
     points: [
-      'Ship client websites and web apps with PHP, React, Node.js, and Next.js.',
+      'Ship client websites and web apps with PHP, React, Node.js, Express, and Next.js.',
       'Own the full loop: brief, UI, backend, deploy, and handoff.',
-      'Recent live work includes 77 Massage Treat (77massagetreat.com).',
+      'Recent live work includes Merilla Fits (merilla-fits.vercel.app) and 77 Massage Treat (77massagetreat.com).',
     ],
   },
   {
@@ -245,14 +249,13 @@ export const ABOUT = {
   photoAlt:
     'Thywill Naamwanuru Saanuo standing in a lobby, wearing a mauve shirt and black trousers',
   bio: [
-    'I’m a full-stack developer based in Kasoa, Ghana. For about two years I’ve been building websites and web apps for clients while studying Internet of Things and Big Data at GCTU.',
+    'I’m a software engineer and full-stack developer based in Kasoa, Ghana. For about two years I’ve been building websites and web apps for clients while studying Internet of Things and Big Data at GCTU.',
     'I like work that has a clear job to do: a studio that needs bookings, a dashboard that has to make sensor data readable, a small business that needs to look trustworthy on a phone. I move between PHP and Node on the backend and React or Next.js on the frontend.',
     'Right now I’m focused on stronger frontend craft (this site is part of that) without dropping the backend work that pays the bills.',
   ],
   facts: [
-    { label: 'Based in', value: 'Kasoa, Ghana' },
     { label: 'Focus', value: 'Student + freelance' },
     { label: 'Experience', value: '~2 years' },
-    { label: 'Open to', value: 'Remote & local work' },
+    { label: 'Open to', value: 'Remote & local work hire' },
   ],
 };

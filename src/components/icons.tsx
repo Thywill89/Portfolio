@@ -32,6 +32,89 @@ export function LinkedInIcon({ size = 18, ...props }: IconProps) {
   );
 }
 
+export function ReactIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="2.1" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1.4" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="currentColor" strokeWidth="1.4" transform="rotate(120 12 12)" />
+    </svg>
+  );
+}
+
+export function NextJsIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 16.1h-1.7L9.6 9.8v8.3H7.8V5.9h1.8l4.8 8.1V5.9h1.8Z" />
+    </svg>
+  );
+}
+
+export function NodeJsIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12 1.7 3.6 6.5v11l8.4 4.8 8.4-4.8v-11Zm0 2.1 6.5 3.7v7.4L12 18.6 5.5 14.9V7.5Z" />
+    </svg>
+  );
+}
+
+export function PhpIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M7.2 10.1h1.4l.3 1.6H10l-.4-2.3H7.2Zm4.4 0h1.3l.2 1.1h1.5l-.2-1.1h1.3l.5 2.3h-1.3l-.2-1h-1.4l.2 1h-1.4Zm5.5 0H19l.3 1.6h1.1l-.4-2.3h-2.4Zm-9.2 3.5H6.4L7 16h1.3l.2-1.1h1.3L9.6 16h1.4l.5-2.4H8.1Zm4.5 0h-1.5l.5 2.4h1.3l.2-1.1h1.5l-.2 1.1h1.3l.5-2.4h-3.4Zm5.5 0h-1.5L17 16h1.3l.2-1.1h1.3L19.6 16H21l.5-2.4h-3.4ZM2 12c0-3.3 4.5-6 10-6s10 2.7 10 6-4.5 6-10 6-10-2.7-10-6Z" />
+    </svg>
+  );
+}
+
+export function ExpressIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M24 18.6h-3.2l-2.4-3.1-2.4 3.1H12.8l3.9-5-3.7-4.8h3.3l2.2 3 2.2-3H24l-3.8 4.8Zm-13.3 0H0l6.7-8.6L.4 5.4h3.4l4.2 3.5 4.1-3.5h3.3L9.2 10l6.6 8.6H12l-2.6-3.4Z" />
+    </svg>
+  );
+}
+
+export function TypeScriptIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M1.5 1.5h21v21h-21Zm11.6 11.3H10v8.2H7.5v-8.2H4.3V10.4h8.8Zm7.3 3.4c0-1.5-1-2.4-3.2-2.4-1.6 0-2.8.4-3.6 1l.9 1.6c.6-.4 1.5-.8 2.6-.8.9 0 1.4.3 1.4.8 0 .6-.5.8-1.9 1.2-2 .6-3 1.5-3 3.2 0 1.8 1.2 3 3.4 3 1.5 0 2.6-.3 3.5-1l-.9-1.6c-.8.5-1.7.8-2.6.8-.9 0-1.5-.3-1.5-.9 0-.6.5-.8 2-1.3 2-.6 2.9-1.5 2.9-3.2Z" />
+    </svg>
+  );
+}
+
+export function PrismaIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="m21.6 16.3-7.8 4.6c-.5.3-1.1.3-1.6 0L2.4 13.8c-.7-.4-.6-1.5.2-1.7l4.3-1.1 8.5-8.3c.5-.5 1.4-.1 1.4.6l1.3 11.5 3.3 1c.7.2.7 1.2.2 1.5Zm-5.4-1.4L14.8 5.4 7.6 12.4l8.6 2.5Z" />
+    </svg>
+  );
+}
+
+export function SupabaseIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M13.6 2.2 4.3 14.3c-.5.6 0 1.5.8 1.5h6.4l-1.1 6c-.2.9.9 1.5 1.5.8l9.3-12.1c.5-.6 0-1.5-.8-1.5h-6.4l1.1-6c.2-.9-.9-1.5-1.5-.8Z" />
+    </svg>
+  );
+}
+
+export function TailwindIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12 6c-2.7 0-4.4 1.3-5 4 1-1.3 2.1-1.8 3.4-1.5.7.2 1.3.7 1.9 1.3C13.1 11 14.2 12 16 12c2.7 0 4.4-1.3 5-4-1 1.3-2.1 1.8-3.4 1.5-.7-.2-1.3-.7-1.9-1.3C14.9 7 13.8 6 12 6ZM7 12c-2.7 0-4.4 1.3-5 4 1-1.3 2.1-1.8 3.4-1.5.7.2 1.3.7 1.9 1.3C8.1 17 9.2 18 11 18c2.7 0 4.4-1.3 5-4-1 1.3-2.1 1.8-3.4 1.5-.7-.2-1.3-.7-1.9-1.3C9.9 13 8.8 12 7 12Z" />
+    </svg>
+  );
+}
+
+export function MySqlIcon({ size = 18, ...props }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M16.8 3.1c-1.2 0-2.2.4-2.8 1.2-.7.9-.8 2.2-.4 3.6.1.4.3.8.5 1.2l-2.4 4.5c-.3-.1-.6-.2-1-.2-1.7 0-2.9 1.3-3.6 2.4-.5.8-.8 1.6-1 2.1-.6.2-1.6.5-2.3.8-.8.4-1.2.8-1.3 1.2 0 .2 0 .4.2.5.3.3 1 0 1.7-.3.8-.4 1.5-1 2-1.7.8 1.4 2 2.4 3.6 2.4.5 0 1-.1 1.4-.4.5.4 1.1.6 1.8.6 2.4 0 4-2.6 4.6-4.1.3-.7.6-1.6.8-2.5 1.1.3 2.3.2 3.1-.3.4-.3.6-.6.6-1 0-.6-.6-1.1-1.7-1.4-1.1-.3-2.4-.3-3.3 0-.2-.7-.5-1.4-.9-2 .7-.8 1.1-1.7 1.1-2.6 0-1.3-.9-2.4-2.4-2.4Zm0 1.4c.7 0 1.1.5 1.1 1.2 0 .6-.3 1.3-.8 1.9-.5-.8-.8-1.6-.9-2.3.2-.5.4-.8.6-.8Zm-6.9 11c.4 0 .9.3 1.4.9l-.8 1.4c-.4-.5-.8-.8-1.2-.8-.7 0-1.5.8-2.1 1.8.2-.7.5-1.4.9-1.9.5-.7 1.1-1.4 1.8-1.4Zm4.3.2c.7 0 1.5.8 2.1 2.2-.3-1.4-1.1-2.2-2-2.2-.5 0-1 .3-1.4.8l.8 1.4c.2-.6.4-2.2.5-2.2Z" />
+    </svg>
+  );
+}
+
 export function WhatsAppIcon({ size = 18, ...props }: IconProps) {
   return (
     <svg

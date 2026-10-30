@@ -20,16 +20,29 @@ const FEATURED_PROJECTS = [
     theme: 'from-accent/10 to-secondary/10',
   },
   {
-    id: 'iot-lab',
-    title: 'IoT Lab Monitor',
-    subtitle: 'Real-time sensor dashboard.',
+    id: 'merillafits',
+    title: 'Merilla Fits',
+    subtitle: 'Live client shop.',
     description:
-      'React dashboard with Node/Express backend ingesting sensor readings. Built for my IoT & Big Data coursework — data in, usable interface out.',
-    highlight: 'Academic meets freelance',
-    githubUrl: 'https://github.com/Thywill89/Portfolio',
-    image: '/images/project-iot.svg',
-    tags: ['React', 'Node.js', 'Express', 'Prisma'],
+      'A mobile-first catalog for shoes, bags, and everyday style in Ghana. Browse the collection and order on WhatsApp — no checkout form, just a working storefront.',
+    highlight: 'Full-stack client project',
+    liveUrl: 'https://merilla-fits.vercel.app/',
+    image: '/images/merilla-fits.png',
+    tags: ['React', 'Supabase', 'Tailwind', 'Vercel'],
     theme: 'from-secondary/10 to-accent/10',
+  },
+  {
+    id: 'sevan-fitness-gym',
+    title: 'Sevan Fitness Gym',
+    subtitle: 'Live gym operations dashboard.',
+    description:
+      'A Next.js gym dashboard for members, renewals, payments, and revenue. Deployed on Cloudflare Workers, with Prisma and PostgreSQL behind the app.',
+    highlight: 'Full-stack client project',
+    liveUrl: 'https://sevan-gym.thywillnaamwanuru89.workers.dev/',
+    image: '/images/sevan-fitness-gym.png',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    theme: 'from-secondary/10 to-accent/10',
+    screenshot: true,
   },
 ];
 
@@ -57,13 +70,25 @@ export function FeaturedShowcase() {
               <div className={`absolute inset-0 bg-gradient-to-br ${project.theme} opacity-20`} />
               
               <div className={`grid gap-8 lg:grid-cols-2 ${isEven ? '' : 'lg:grid-flow-dense'}`}>
-                <div className={`relative aspect-[16/10] overflow-hidden bg-canvas lg:aspect-auto ${isEven ? '' : 'lg:col-start-2'}`}>
+                <div
+                  className={`relative overflow-hidden ${
+                    project.screenshot
+                      ? 'flex items-center justify-center bg-white p-3 sm:p-5'
+                      : 'aspect-[16/10] bg-canvas lg:aspect-auto'
+                  } ${isEven ? '' : 'lg:col-start-2'}`}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={
+                      project.screenshot
+                        ? 'h-auto w-full object-contain'
+                        : 'h-full w-full object-cover transition-transform duration-700 group-hover:scale-105'
+                    }
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-canvas/80 to-transparent" />
+                  {project.screenshot ? null : (
+                    <div className="absolute inset-0 bg-gradient-to-t from-canvas/80 to-transparent" />
+                  )}
                 </div>
 
                 <div className="relative flex flex-col justify-center p-8 lg:p-12">

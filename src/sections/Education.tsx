@@ -77,7 +77,7 @@ export function Education() {
                         {edu.institution}
                       </p>
                       <p className="mt-1 font-mono text-sm text-muted">
-                        {edu.location} · {edu.period}
+                        {edu.period}
                       </p>
                     </div>
                   </div>

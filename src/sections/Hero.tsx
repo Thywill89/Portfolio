@@ -1,20 +1,32 @@
 import { Button } from '@/components/ui/Button';
+import {
+  ExpressIcon,
+  MySqlIcon,
+  NextJsIcon,
+  NodeJsIcon,
+  PhpIcon,
+  PrismaIcon,
+  ReactIcon,
+  SupabaseIcon,
+  TailwindIcon,
+  TypeScriptIcon,
+} from '@/components/icons';
 import { SITE } from '@/lib/site';
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Code2, Terminal } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const STACK = [
-  'React',
-  'Next.js',
-  'Node.js',
-  'PHP',
-  'Express',
-  'TypeScript',
-  'Prisma',
-  'Supabase',
-  'Tailwind',
-  'MySQL',
+  { name: 'React', Icon: ReactIcon },
+  { name: 'Next.js', Icon: NextJsIcon },
+  { name: 'Node.js', Icon: NodeJsIcon },
+  { name: 'PHP', Icon: PhpIcon },
+  { name: 'Express', Icon: ExpressIcon },
+  { name: 'TypeScript', Icon: TypeScriptIcon },
+  { name: 'Prisma', Icon: PrismaIcon },
+  { name: 'Supabase', Icon: SupabaseIcon },
+  { name: 'Tailwind', Icon: TailwindIcon },
+  { name: 'MySQL', Icon: MySqlIcon },
 ];
 
 const ROLES = [
@@ -28,7 +40,7 @@ const ROLES = [
 
 const PROMPT_LINES = [
   '$ whoami',
-  'thywill@kasoa ~ Full-Stack Developer',
+  'Thywill Naamwanuru Saanuo ~ Software Engineer | Full-Stack Developer',
   '',
   '$ cat skills.txt',
   'Frontend: React, Next.js, TypeScript',
@@ -38,9 +50,10 @@ const PROMPT_LINES = [
   '$ ls projects/',
   '77massagetreat.com  iot-lab',
   'sevan-fitness  school-mgmt',
+  'merillafits E-commerce',
   '',
   '$ echo $STATUS',
-  'Available for freelance & remote work',
+  'Available for hire',
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -94,28 +107,14 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
-              Open for freelance
-            </div>
-
-            {/* Location - crisp, no blur */}
-            <div className="mb-4 flex items-center gap-2 font-mono text-xs text-accent">
-              <Terminal size={14} />
-              <span>{SITE.location}</span>
+              hi
             </div>
 
             {/* Main heading - crisp, strong contrast */}
             <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              <span className="block mb-2">Hi, I'm</span>
-              <span className="text-accent">{SITE.shortName} Naamwanuru</span>
+              <span className="block mb-2">I'm</span>
+              <span className="text-accent">{SITE.shortName} Naamwanuru Saanuo</span>
             </h1>
-
-            {/* Achievement banner - solid background */}
-            <div className="mt-6 inline-flex max-w-2xl items-start gap-3 rounded-xl border border-accent/30 bg-accent/10 p-4">
-              <span className="text-2xl" role="img" aria-label="achievement">🏆</span>
-              <p className="text-sm leading-relaxed text-ink sm:text-base">
-                Building production web apps for clients while completing IoT & Big Data degree at GCTU
-              </p>
-            </div>
 
             {/* Role cycling - crisp text */}
             <div className="mt-6 h-[2.5rem] sm:h-[3rem] overflow-hidden">
@@ -135,8 +134,8 @@ export function Hero() {
 
             {/* Description - crisp, good contrast */}
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted sm:text-base">
-              Building reliable web products with React, Node.js, and PHP. From concept to
-              deployment — I ship clean code and working software.
+              Building reliable products with React, Node.js, Express, PHP, and Next.js. From concept to
+              deployment, I ship clean code and working software.
             </p>
 
             {/* CTAs - crisp buttons */}
@@ -150,22 +149,6 @@ export function Hero() {
                 <ArrowRight size={16} aria-hidden="true" />
               </Button>
             </div>
-
-            {/* Stats - crisp text */}
-            <div className="mt-12 grid grid-cols-3 gap-4 border-t border-line pt-8 text-sm">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-muted">Location</p>
-                <p className="mt-1 text-xs font-medium text-ink sm:text-sm">Kasoa, GH</p>
-              </div>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-muted">Experience</p>
-                <p className="mt-1 text-xs font-medium text-ink sm:text-sm">~2 Years</p>
-              </div>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-muted">Work Type</p>
-                <p className="mt-1 text-xs font-medium text-ink sm:text-sm">Remote</p>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right: Terminal Only */}
@@ -173,10 +156,10 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease }}
-            className="flex items-center"
+            className="flex items-center justify-end"
           >
             {/* Terminal card - solid background, crisp text */}
-            <div className="w-full overflow-hidden rounded-xl border border-line bg-surface p-4 shadow-lg sm:p-6">
+            <div className="w-full overflow-hidden rounded-xl border border-line bg-surface p-4 shadow-lg sm:p-6 lg:w-[92%] lg:translate-x-4">
               <div className="mb-3 flex items-center justify-between border-b border-line pb-3">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -188,26 +171,33 @@ export function Hero() {
                 </div>
                 <Terminal size={14} className="text-muted" />
               </div>
-              <div className="overflow-x-auto">
-                <div className="min-w-0 space-y-1 font-mono text-xs leading-relaxed text-muted sm:text-[13px]">
-                  {displayedLines.map((line, i) => (
-                    <div
-                      key={i}
-                      className={
-                        line.startsWith('$')
-                          ? 'text-accent'
-                          : line === ''
-                            ? 'h-3'
-                            : ''
-                      }
-                    >
-                      {line || '\u00A0'}
-                    </div>
-                  ))}
-                  {!reduce && currentLineIndex < PROMPT_LINES.length && (
-                    <span className="inline-block h-4 w-2 animate-pulse bg-accent" />
-                  )}
+              <div className="flex items-center gap-4 sm:gap-6">
+                <div className="min-w-0 flex-1 overflow-x-auto">
+                  <div className="space-y-1 font-mono text-xs leading-relaxed text-muted sm:text-[13px]">
+                    {displayedLines.map((line, i) => (
+                      <div
+                        key={i}
+                        className={
+                          line.startsWith('$')
+                            ? 'text-accent'
+                            : line === ''
+                              ? 'h-3'
+                              : ''
+                        }
+                      >
+                        {line || '\u00A0'}
+                      </div>
+                    ))}
+                    {!reduce && currentLineIndex < PROMPT_LINES.length && (
+                      <span className="inline-block h-4 w-2 animate-pulse bg-accent" />
+                    )}
+                  </div>
                 </div>
+                <img
+                  src="/images/portrait.jpg"
+                  alt={SITE.name}
+                  className="h-40 w-32 shrink-0 rounded-lg border border-line object-cover object-[center_18%] sm:h-52 sm:w-40 lg:h-60 lg:w-48"
+                />
               </div>
             </div>
           </motion.div>
@@ -215,15 +205,16 @@ export function Hero() {
       </div>
 
       {/* Tech stack marquee */}
-      <div className="relative overflow-hidden border-t border-line bg-surface/40 py-3">
+      <div className="relative overflow-hidden border-t border-line bg-surface/40 py-3.5">
         <div className="flex">
-          <div className="animate-marquee flex min-w-full shrink-0 gap-6 pr-6 sm:gap-10 sm:pr-10">
+          <div className="animate-marquee flex min-w-full shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12">
             {stack.map((item, i) => (
               <span
-                key={`${item}-${String(i)}`}
-                className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.28em] text-muted"
+                key={`${item.name}-${String(i)}`}
+                className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-xs uppercase tracking-[0.22em] text-muted"
               >
-                {item} <span className="text-accent">◆</span>
+                <item.Icon size={16} className="text-accent" />
+                {item.name}
               </span>
             ))}
           </div>

@@ -10,7 +10,13 @@ const LIVE_PROJECTS = [
     name: '77 Massage Treat',
     url: 'https://77massagetreat.com',
     description: 'Massage & wellness studio website',
-    status: 'Live in production',
+    status: 'Live',
+  },
+  {
+    name: 'Merilla Fits',
+    url: 'https://merilla-fits.vercel.app/',
+    description: 'Shoes, style & essentials shop — order on WhatsApp',
+    status: 'Live',
   },
   {
     name: 'Sevan Fitness Gym',

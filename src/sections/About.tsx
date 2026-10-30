@@ -1,6 +1,6 @@
 import { Section } from '@/components/ui/Section';
 import { ABOUT } from '@/lib/site';
-import { Code2, GraduationCap, MapPin, Briefcase } from 'lucide-react';
+import { Code2, GraduationCap, Briefcase } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -40,7 +40,7 @@ export function About() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {ABOUT.facts.map((fact, index) => {
-              const icons = [MapPin, GraduationCap, Briefcase, Code2];
+              const icons = [GraduationCap, Briefcase, Code2];
               const Icon = icons[index] || Code2;
               return (
                 <motion.div

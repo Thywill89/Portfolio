@@ -7,14 +7,25 @@ type ProjectPreviewProps = {
 };
 
 export function ProjectPreview({ project, className }: ProjectPreviewProps) {
-  if (project.slug === '77-massage-treat') {
+  if (
+    project.slug === 'merillafits' ||
+    project.slug === '77-massage-treat' ||
+    project.slug === 'sevan-fitness-gym'
+  ) {
+    const alt =
+      project.slug === 'merillafits'
+        ? 'Merilla Fits shop landing page'
+        : project.slug === 'sevan-fitness-gym'
+          ? 'Sevan Fitness Gym operations dashboard'
+          : '77 Massage Treat licensed therapists';
+
     return (
       <img
         src={project.image}
-        alt="77 Massage Treat licensed therapists"
+        alt={alt}
         width={1600}
         height={893}
-        className={cn('h-full min-h-[14rem] w-full object-cover object-center', className)}
+        className={cn('h-full min-h-[14rem] w-full object-cover object-top', className)}
       />
     );
   }

@@ -43,19 +43,13 @@ export function Experience() {
                       {item.start} — {item.end}
                     </span>
                     <span className="font-mono text-xs text-muted">
-                      {item.kind === 'education' ? '🎓 Education' : '💼 Work'}
+                      {item.kind === 'education' ? 'Education' : 'Work'}
                     </span>
                   </div>
                   
                   <h3 className="font-display text-xl font-bold leading-tight lg:text-2xl">{item.title}</h3>
                   <p className="mt-2 text-sm font-medium text-muted sm:text-base">
                     {item.org}
-                    {item.location && (
-                      <>
-                        <span className="mx-2">·</span>
-                        {item.location}
-                      </>
-                    )}
                   </p>
                   
                   <ul className="mt-5 space-y-2.5 border-t border-line pt-5">

@@ -1,6 +1,6 @@
 import { SITE, SOCIAL } from '@/lib/site';
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/icons';
-import { ArrowUp, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const ICONS = {
   GitHub: GitHubIcon,
@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="border-t border-line py-10">
       <div className="mx-auto flex max-w-content flex-col gap-6 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <p className="text-sm text-muted">
-          © {year} {SITE.name}. Built in React.
+          © {year} {SITE.name}.
         </p>
         <div className="flex items-center gap-3">
           {SOCIAL.map((item) => {
@@ -35,14 +35,6 @@ export function Footer() {
               </a>
             );
           })}
-          <a
-            href="#top"
-            className="inline-flex h-10 items-center gap-2 rounded-full border border-line px-3 text-sm font-medium text-ink transition hover:border-accent/50 hover:text-accent"
-            aria-label="Back to top"
-          >
-            <ArrowUp size={16} aria-hidden="true" />
-            Top
-          </a>
         </div>
       </div>
     </footer>
