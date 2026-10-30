@@ -5,20 +5,27 @@ import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
 
-const SECTION_IDS = ['hero', 'featured', 'live-projects', 'my-works', 'skills', 'education', 'experience', 'contact'];
+const SECTION_IDS = ['hero', 'featured', 'live-projects', 'my-works', 'skills', 'education', 'experience', 'contact'] as const;
 
-const NAV_BUTTONS = [
+type SectionId = (typeof SECTION_IDS)[number];
+
+const NAV_BUTTONS: ReadonlyArray<{
+  label: string;
+  href: string;
+  icon: typeof Home;
+  match: readonly SectionId[];
+}> = [
   { label: 'Home', href: '/#hero', icon: Home, match: ['hero'] },
   { label: 'Work', href: '/#featured', icon: Briefcase, match: ['featured', 'live-projects', 'my-works'] },
   { label: 'Skills', href: '/#skills', icon: Code2, match: ['skills'] },
   { label: 'Education', href: '/#education', icon: GraduationCap, match: ['education'] },
   { label: 'Contact', href: '/#contact', icon: Mail, match: ['contact'] },
-] as const;
+];
 
 export function Navbar() {
   const location = useLocation();
   const onHome = location.pathname === '/';
-  const active = useScrollSpy(onHome ? SECTION_IDS : []);
+  const active = useScrollSpy(onHome ? [...SECTION_IDS] : []);
 
   return (
     <>
@@ -42,7 +49,7 @@ export function Navbar() {
         <div className="pointer-events-auto mx-auto flex max-w-sm items-center justify-between px-6 sm:max-w-md">
           {NAV_BUTTONS.map((item) => {
             const isActive =
-              (onHome && item.match.includes(active as (typeof item.match)[number])) ||
+              (onHome && item.match.includes(active as SectionId)) ||
               (item.label === 'Work' && location.pathname.startsWith('/projects')) ||
               (item.label === 'Home' && onHome && (active === 'hero' || !active));
             const Icon = item.icon;
