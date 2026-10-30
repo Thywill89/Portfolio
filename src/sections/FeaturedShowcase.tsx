@@ -6,7 +6,21 @@ import { Link } from 'react-router-dom';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const FEATURED_PROJECTS = [
+type FeaturedProject = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  highlight: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  image: string;
+  tags: string[];
+  theme: string;
+  screenshot?: boolean;
+};
+
+const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: '77-massage',
     title: '77 Massage Treat',
